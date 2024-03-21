@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".TestActivity">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:textSize="20sp"
+                android:text="主端部分:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:text="开始DKG"
+                android:id="@+id/dkg"
+                android:textAllCaps="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:text="queryNewMessage"
+                android:id="@+id/queryNewMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:text="notifyMessage"
+                android:id="@+id/notifyMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:text="accountCreated"
+                android:id="@+id/accountCreated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:textSize="20sp"
+                android:text="副端部分:"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:text="开始DKG"
+                android:id="@+id/dkgServer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:text="queryNewMessage"
+                android:id="@+id/queryNewMessageServer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:text="notifyMessage"
+                android:id="@+id/notifyMessageServer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textAllCaps="false"
+                android:text="accountCreated"
+                android:id="@+id/accountCreatedServer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <Button
+            android:text="测试服务器接口调用"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:id="@+id/testTransaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</ScrollView>

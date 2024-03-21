@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_0b0bd8"
+    tools:context=".ui.ServerFragment">
+
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/version_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:text="Version:" />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/version_tv"
+        android:id="@+id/net_type_tv"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:text="Version:" />
+
+    <!--DKG视图-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dkgView"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dkgContentView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/dkgCCBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <TextView
+                android:id="@+id/dkgText"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Welcome to Safnect Wallet"
+                android:textColor="@color/color_ff1f2021"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/dkgCCBtn"
+            android:visibility="gone"
+            android:textSize="14sp"
+            android:text="OK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <!--交易视图-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/transitionView"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/transitionContentView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/transitionCCBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <TextView
+                android:id="@+id/transitionText"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Welcome to Safnect Wallet"
+                android:gravity="center"
+                android:textColor="@color/color_ff1f2021"
+                android:textSize="18sp"
+                android:layout_width="0dp"
+                android:visibility="gone"
+                android:layout_height="wrap_content"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/transitionInfoView"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:padding="10dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:minWidth="80dp"
+                    android:id="@+id/amount_tv"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="Amount:"
+                    android:textColor="@color/color_ff1f2021"
+                    android:textSize="18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/amount_val_tv"
+                    app:layout_constraintTop_toTopOf="@+id/amount_tv"
+                    app:layout_constraintStart_toEndOf="@+id/amount_tv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textColor="@color/color_ff616366"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    tools:text="ETH 45"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+                    android:minWidth="80dp"
+                    android:id="@+id/fees_tv"
+                    app:layout_constraintStart_toStartOf="@+id/amount_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/amount_tv"
+                    android:text="Fees:"
+                    android:textColor="@color/color_ff1f2021"
+                    android:textSize="18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/fees_val_tv"
+                    app:layout_constraintTop_toTopOf="@+id/fees_tv"
+                    app:layout_constraintStart_toEndOf="@+id/fees_tv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textColor="@color/color_ff616366"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    tools:text="ETH 1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:minWidth="80dp"
+                    android:id="@+id/address_tv"
+                    app:layout_constraintStart_toStartOf="@+id/fees_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/fees_tv"
+                    android:text="Address:"
+                    android:textColor="@color/color_ff1f2021"
+                    android:textSize="18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/address_val_tv"
+                    app:layout_constraintTop_toTopOf="@+id/address_tv"
+                    app:layout_constraintStart_toEndOf="@+id/address_tv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textColor="@color/color_ff616366"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    tools:text="5555555555555555555555555555555555555555555555555555555555555555555555555555555555555"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/transitionCCBtn"
+            android:textSize="14sp"
+            android:text="OK"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--  这些UI 没有什么用，先隐藏起来 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        tools:context=".ui.ServerFragment">
+
+        <Button
+            android:id="@+id/btnstartAdvertising"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="发送广播"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnstopAdvertising"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="停止广播"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnstartAdvertising" />
+
+        <Button
+            android:id="@+id/btnaddGattServer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="添加服务"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnstopAdvertising" />
+
+        <Button
+            android:id="@+id/btnsendMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="发送消息"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnaddGattServer" />
+
+        <LinearLayout
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnsendMsg"
+            android:id="@+id/msgLL"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/showText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btnread"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="3dp"
+                android:text="读取"
+                android:layout_marginEnd="8dp" />
+
+
+            <Button
+                android:id="@+id/btnwrite"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="8dp"
+                android:text="写入"/>
+
+            <EditText
+                android:id="@+id/edtinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/cardview_shadow_start_color"
+                android:hint="在此输入要发送的文本"
+                android:gravity="center"
+                android:textSize="14dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="1dp" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/msgLL"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tvMsgShow"
+                android:text="测试"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:lineSpacingExtra="1dp"/>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

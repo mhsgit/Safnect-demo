@@ -1,0 +1,124 @@
+syntax = "proto3";
+package wallet_message;
+
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "tss-wallet.com/wallet_message";
+option java_package = "com.populstay.wallet.proto";
+//option java_outer_classname = "Demo3Proto";
+
+enum ResponseStatus {
+    RESERVE = 0;
+    SUCCESS = 1;
+    FAILURE = 2;
+    EMPTY = 3;
+
+  SEND_TXN_FAIL_RESERVE = 100;
+  SEND_TXN_FAIL_INSUFFICIENT_BALANCE = 101;
+  SEND_TXN_FAIL_SIGN_ERROR = 102;
+  SEND_TXN_FAIL_API_ERROR = 103;
+}
+
+enum TransactionState {
+  TX_RESERVE = 0;
+  TX_PENDING = 1;
+  TX_SUCCESS = 2;
+  TX_FAILURE = 3;
+}
+
+message RunDKGResult {
+  ResponseStatus status = 1;
+  string error_message = 2;
+}
+
+message SendTransactionResult {
+  ResponseStatus status = 1;
+  string error_message = 2;
+  string sent_hash = 3;
+}
+
+message QueryMessageResult {
+  ResponseStatus status = 1;
+  google.protobuf.Any message = 2;
+}
+
+enum AssetType {
+  UNSET = 0;
+  ETH = 1;
+  BITCOINT = 2;
+}
+
+message Asset {
+  AssetType type = 1;
+  string amount = 2;
+}
+
+message MyAsset {
+  repeated Asset assets = 1;
+}
+
+message GetAssetResult {
+  ResponseStatus status = 1;
+  string error_message = 2;
+  MyAsset my_asset = 3;
+}
+
+message Transaction {
+  // 交易hash，唯一id值
+  string tx_hash = 1;
+  // 交易数量，单位是eth
+  string tx_value = 2;
+  // 转出地址
+  string from = 3;
+  // 转入地址
+  string to = 4;
+  // gas费用
+  string gas_fee = 5;
+  // transaction 状态
+  TransactionState transaction_state = 6;
+
+  google.protobuf.Timestamp tx_time = 7;
+
+}
+
+message GetTransactionResult {
+  ResponseStatus status = 1;
+  string error_message = 2;
+  repeated Transaction transactions = 3;
+}
+
+// 交易信息消息发送
+message SendTransactionPara{
+  string receiver = 1;
+  double amount = 2;
+  double fee = 3;
+  int32 netType = 4;
+}
+
+// common 消息转发
+message CommonMsgType {
+  int32 DKG = 1;
+  int32 TRANSACTION = 2;
+}
+
+message OperateType {
+  int32 REQUEST_DKG = 1; // 请求DKG
+  int32 RESPONSE_DKG = 2; // 响应DKG
+  int32 REQUEST_TRANSACTION = 3; // 请求交易
+  int32 RESPONSE_TRANSACTION = 4; // 响应交易
+  int32 RESPONSE_COMPLETE = 5; // 响应交易
+}
+
+message CommonResponseStatus {
+    int32 REFUSE = 1;// 拒绝
+    int32  AGREE  = 2;// 同意
+}
+
+message CommonMsg{
+  int32  type = 1;
+  int32  opType = 2;
+  int32  opRespStatus = 3;
+  SendTransactionPara transactionData = 4;
+  string backup = 5;// 蓝牙通信传送数据，数据包的size必须>0,如果value全部是enum，数据包一定是size=0，所以加个string，没有实际意义。
+}

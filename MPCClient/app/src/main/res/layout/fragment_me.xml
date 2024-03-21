@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/color_eff0f2"
+    android:layout_height="match_parent"
+    tools:context=".home.view.MeFragment">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:src="@mipmap/app_logo"
+        android:layout_width="128dp"
+        android:layout_height="128dp"/>
+
+    <TextView
+        android:id="@+id/desc_tv"
+        android:layout_below="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/color_ff1f2021"
+        android:text="@string/wait_upgrade" />
+
+    <TextView
+        android:id="@+id/version_tv"
+        android:layout_below="@+id/desc_tv"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/color_ff1f2021"
+        android:text="@string/wait_upgrade" />
+
+    <TextView
+        android:id="@+id/net_type_tv"
+        android:layout_below="@+id/version_tv"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/color_ff1f2021"
+        android:text="@string/wait_upgrade" />
+
+</RelativeLayout>

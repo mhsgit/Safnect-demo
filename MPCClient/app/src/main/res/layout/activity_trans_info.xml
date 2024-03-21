@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".wallet.view.TransInfoActivity">
+
+
+    <include layout="@layout/common_title_layout"
+        android:id="@+id/common_title_layout"/>
+
+    <ScrollView
+        app:layout_constraintTop_toBottomOf="@+id/common_title_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+                <!--Choose a crypto asset-->
+                <TextView
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/crypto_asset_label"
+                    style="@style/TextViewLabelStyle"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/crypto_asset_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <Spinner
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/crypto_asset_label"
+                    app:layout_constraintTop_toBottomOf="@+id/crypto_asset_label"
+                    android:layout_marginEnd="15dp"
+                    android:id="@+id/crypto_asset_spinner"
+                    android:spinnerMode="dropdown"
+                    android:background="@drawable/bt_spinner_bg"
+                    android:layout_width="0dp"
+                    android:dropDownVerticalOffset="60dp"
+                    android:dropDownWidth="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <!--Choose an account-->
+                <TextView
+                    app:layout_constraintTop_toBottomOf="@+id/crypto_asset_spinner"
+                    app:layout_constraintStart_toStartOf="@+id/crypto_asset_spinner"
+                    android:id="@+id/account_label"
+                    style="@style/TextViewLabelStyle"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/account_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <Spinner
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/account_label"
+                    app:layout_constraintTop_toBottomOf="@+id/account_label"
+                    android:layout_marginEnd="15dp"
+                    android:id="@+id/account_spinner"
+                    android:spinnerMode="dropdown"
+                    android:background="@drawable/bt_spinner_bg"
+                    android:layout_width="0dp"
+                    android:dropDownVerticalOffset="60dp"
+                    android:dropDownWidth="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <!--Amount-->
+                <TextView
+                    app:layout_constraintTop_toBottomOf="@+id/account_spinner"
+                    app:layout_constraintStart_toStartOf="@+id/account_spinner"
+                    android:id="@+id/amount_label"
+                    style="@style/TextViewLabelStyle"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/amount_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/amount_clayout"
+                    android:background="@drawable/edit_item_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/amount_label"
+                    app:layout_constraintTop_toBottomOf="@+id/amount_label"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/amount_et"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/amount_unit_tv"
+                        android:layout_width="0dp"
+                        style="@style/TextViewContentStyle"
+                        android:textColor="@color/color_ff616366"
+                        android:background="@android:color/transparent"
+                        android:text="5555555"
+                        android:inputType="numberDecimal"
+                        android:layout_height="0dp"/>
+
+                    <TextView
+                        app:layout_constraintEnd_toStartOf="@+id/line_view"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        style="@style/TextViewContentStyle"
+                        android:text="ETH"
+                        android:padding="5dp"
+                        android:textColor="@color/color_ff919599"
+                        android:id="@+id/amount_unit_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <View
+                        android:background="@color/color_ffdee2e5"
+                        android:layout_width="1dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/amount_max_btn"
+                        android:id="@+id/line_view"
+                        android:layout_marginEnd="15dp"
+                        android:layout_height="0dp"/>
+
+                    <TextView
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        style="@style/TextViewContentStyle"
+                        android:text="@string/max"
+                        android:padding="5dp"
+                        android:textColor="@color/color_ff2446f1"
+                        android:id="@+id/amount_max_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    app:layout_constraintTop_toBottomOf="@+id/amount_clayout"
+                    app:layout_constraintStart_toStartOf="@+id/amount_label"
+                    android:id="@+id/available_label"
+                    android:text="@string/available_label"
+                    android:layout_marginTop="8dp"
+                    style="@style/TextViewContentStyle"
+                    android:textColor="@color/color_ff616366"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    app:layout_constraintTop_toTopOf="@+id/available_label"
+                    app:layout_constraintBottom_toBottomOf="@+id/available_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/available_amount_tv"
+                    tools:text="1.0 BTC"
+                    style="@style/TextViewContentStyle"
+                    android:textColor="@color/color_ff616366"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <!--Recipient address-->
+
+                <TextView
+                    app:layout_constraintTop_toBottomOf="@+id/available_label"
+                    app:layout_constraintStart_toStartOf="@+id/available_label"
+                    android:id="@+id/recipient_address_label"
+                    style="@style/TextViewLabelStyle"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/recipient_address_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edit_item_bg"
+                    android:id="@+id/address_clayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/recipient_address_label"
+                    app:layout_constraintTop_toBottomOf="@+id/recipient_address_label"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/address_et"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/address_qr_code"
+                        android:layout_width="0dp"
+                        style="@style/TextViewContentStyle"
+                        android:textColor="@color/color_ff616366"
+                        android:background="@android:color/transparent"
+                        android:paddingVertical="5dp"
+                        android:text="5555555"
+                        android:layout_height="match_parent"/>
+
+                    <ImageView
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:padding="5dp"
+                        android:src="@mipmap/scan_qr_code2"
+                        android:id="@+id/address_qr_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!--Network-->
+                <TextView
+                    app:layout_constraintTop_toBottomOf="@+id/address_clayout"
+                    app:layout_constraintStart_toStartOf="@+id/address_clayout"
+                    android:id="@+id/network_label"
+                    style="@style/TextViewLabelStyle"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/network_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <Spinner
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/network_label"
+                    app:layout_constraintTop_toBottomOf="@+id/network_label"
+                    android:layout_marginEnd="15dp"
+                    android:id="@+id/network_spinner"
+                    android:spinnerMode="dropdown"
+                    android:background="@drawable/bt_spinner_bg"
+                    android:layout_width="0dp"
+                    android:dropDownVerticalOffset="60dp"
+                    android:dropDownWidth="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <TextView
+                    app:layout_constraintTop_toBottomOf="@+id/network_spinner"
+                    android:id="@+id/continue_btn"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/continue_btn"
+                    style="@style/CommonBlueButton"
+                    android:layout_marginTop="60dp"
+                    android:clickable="true"
+                    android:enabled="false"
+                    android:layout_width="match_parent"
+                    android:textSize="15sp"
+                    android:layout_marginHorizontal="@dimen/marginLeft"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

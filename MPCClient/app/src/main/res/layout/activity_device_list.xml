@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/common_blue_top_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".device.DKGActivity">
+
+    <include layout="@layout/common_title_layout"
+        android:id="@+id/common_title_layout"/>
+
+    <ScrollView
+        app:layout_constraintTop_toBottomOf="@+id/common_title_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/pair_my_wallet"
+        android:id="@+id/content_scrollview"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_height="0dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/device_list_item_1"
+                    style="@style/device_list_item"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        style="@style/device_list_item_text_1"
+                        android:id="@+id/item_no1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:text="1."
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        style="@style/device_list_item_text_1"
+                        android:id="@+id/item_no1_name"
+                        android:layout_marginStart="2dp"
+                        app:layout_constraintStart_toEndOf="@+id/item_no1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:text="@string/device_list_desc_no1_1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        style="@style/device_list_item_text_2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/item_no1_desc"
+                        app:layout_constraintStart_toStartOf="@+id/item_no1_name"
+                        android:text="@string/device_list_desc_no1_2"
+                        app:layout_constraintTop_toBottomOf="@+id/item_no1_name" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/device_list_item_2"
+                    style="@style/device_list_item"
+                    app:layout_constraintTop_toBottomOf="@+id/device_list_item_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        style="@style/device_list_item_text_1"
+                        android:id="@+id/item_no2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:text="2."
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        style="@style/device_list_item_text_1"
+                        android:id="@+id/item_no2_name"
+                        android:layout_marginStart="2dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/item_no2"
+                        android:text="@string/device_list_desc_no4_1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        style="@style/device_list_item_text_2"
+                        android:id="@+id/item_no2_desc"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/item_no2_name"
+                        android:text="@string/device_list_desc_no2_2"
+                        app:layout_constraintTop_toBottomOf="@+id/item_no2_name" />
+
+                    <Spinner
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/item_no2_desc"
+                        app:layout_constraintTop_toBottomOf="@+id/item_no2_desc"
+                        android:id="@+id/spinner"
+                        android:spinnerMode="dropdown"
+                        android:background="@drawable/bt_spinner_bg"
+                        android:layout_width="match_parent"
+                        android:dropDownVerticalOffset="60dp"
+                        android:dropDownWidth="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/device_list_item_3"
+                    style="@style/device_list_item"
+                    app:layout_constraintTop_toBottomOf="@+id/device_list_item_2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        style="@style/device_list_item_text_1"
+                        android:id="@+id/item_no3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:text="3."
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        style="@style/device_list_item_text_1"
+                        android:id="@+id/item_no3_name"
+                        android:layout_marginStart="2dp"
+                        app:layout_constraintStart_toEndOf="@+id/item_no3"
+                        android:text="@string/device_list_desc_no3_1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        style="@style/device_list_item_text_2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/item_no3_desc"
+                        app:layout_constraintStart_toStartOf="@+id/item_no3_name"
+                        android:text="@string/device_list_desc_no3_2"
+                        app:layout_constraintTop_toBottomOf="@+id/item_no3_name" />
+
+                    <TextView
+                        android:layout_marginTop="15dp"
+                        style="@style/device_list_item_text_3"
+                        android:id="@+id/item_no3_desc_2"
+                        app:layout_constraintStart_toStartOf="@+id/item_no3_name"
+                        android:text="@string/device_list_desc_no3_3"
+                        app:layout_constraintTop_toBottomOf="@+id/item_no3_desc" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/device_list_item_4"
+                    style="@style/device_list_item"
+                    app:layout_constraintTop_toBottomOf="@+id/device_list_item_3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        style="@style/device_list_item_text_1"
+                        android:id="@+id/item_no4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:text="4."
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="HardcodedText" />
+                    <TextView
+                        style="@style/device_list_item_text_1"
+                        android:id="@+id/item_no4_name"
+                        android:layout_marginStart="2dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/item_no4"
+                        android:text="@string/device_list_desc_no4_1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        style="@style/device_list_item_text_2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/item_no4_desc"
+                        app:layout_constraintStart_toStartOf="@+id/item_no4_name"
+                        android:text="@string/device_list_desc_no4_2"
+                        app:layout_constraintTop_toBottomOf="@+id/item_no4_name" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/pair_my_wallet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/pair_my_wallet"
+        style="@style/CommonBlueButton"
+        android:clickable="true"
+        android:layout_width="0dp"
+        android:textSize="15sp"
+        android:enabled="false"
+        android:layout_marginHorizontal="@dimen/marginLeft"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

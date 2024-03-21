@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/transfer_record_item_bg"
+    android:padding="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/token_type_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="BNB"
+        android:textAllCaps="false"
+        android:textColor="@color/color_ff1f2021"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/time_tv" />
+
+    <TextView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/token_type_tv"
+        android:gravity="end"
+        tools:text="2023-08 18 20:07:26"
+        android:layout_marginStart="40dp"
+        android:layout_width="0dp"
+        android:id="@+id/time_tv"
+        android:textSize="13sp"
+        android:textColor="@color/color_ff616366"
+        android:layout_height="wrap_content"/>
+
+    <View
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/token_type_tv"
+        android:layout_marginTop="15dp"
+        android:id="@+id/view_line"
+        android:background="@color/color_dae0e5"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <TextView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_line"
+        tools:text="Transfer"
+        android:layout_marginTop="15dp"
+        android:textAllCaps="false"
+        android:id="@+id/trans_type_tv"
+        android:textSize="15sp"
+        android:textColor="@color/color_ff0b0bd8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_line"
+        tools:text="Success"
+        android:layout_marginTop="15dp"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:id="@+id/trans_status_tv"
+        android:background="@drawable/transfer_record_status_success"
+        android:minHeight="24dp"
+        android:minWidth="62dp"
+        android:textSize="13sp"
+        android:textColor="@color/color_ff198bff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Receiver -->
+    <TextView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trans_type_tv"
+        android:text="Receiver"
+        android:layout_marginTop="15dp"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:id="@+id/receiver_tv"
+        android:textSize="15sp"
+        android:textColor="@color/color_ff616366"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/receiver_tv"
+        app:layout_constraintStart_toEndOf="@+id/receiver_tv"
+        tools:text="ghyg7687987fadh6788768888977898dbzhb89ghyg7687987fadh6788768888977898dbzhb89"
+        android:textAllCaps="false"
+        android:gravity="end"
+        android:id="@+id/receiver_address_tv"
+        android:layout_marginStart="40dp"
+        android:textSize="13sp"
+        android:textColor="@color/color_ff1f2021"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <!-- Sent Hash -->
+
+    <TextView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/receiver_address_tv"
+        android:text="Sent Hash"
+        android:layout_marginTop="15dp"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:id="@+id/sent_hash_tv"
+        android:textSize="15sp"
+        android:textColor="@color/color_ff616366"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sent_hash_tv"
+        app:layout_constraintStart_toEndOf="@+id/sent_hash_tv"
+        tools:text="ghyg7687987fadh6788768888977898dbzhb89ghyg7687987fadh6788768888977898dbzhb89"
+        android:textAllCaps="false"
+        android:gravity="end"
+        android:id="@+id/sent_hash_val_tv"
+        android:layout_marginStart="40dp"
+        android:textSize="13sp"
+        android:textColor="@color/color_ff0b0bd8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <!-- Amount -->
+    <TextView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sent_hash_val_tv"
+        android:text="Amount"
+        android:layout_marginTop="15dp"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:id="@+id/amount_tv"
+        android:textSize="15sp"
+        android:textColor="@color/color_ff616366"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/amount_tv"
+        app:layout_constraintStart_toEndOf="@+id/amount_tv"
+        tools:text="0.001124 BTC"
+        android:textAllCaps="false"
+        android:gravity="end"
+        android:id="@+id/amount_val_tv"
+        android:layout_marginStart="40dp"
+        android:textSize="13sp"
+        android:textColor="@color/color_ff1f2021"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <!-- Fee -->
+    <TextView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amount_tv"
+        android:text="Fee"
+        android:layout_marginTop="15dp"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:id="@+id/fee_tv"
+        android:textSize="15sp"
+        android:textColor="@color/color_ff616366"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fee_tv"
+        app:layout_constraintStart_toEndOf="@+id/fee_tv"
+        tools:text="0.001124 BTC"
+        android:textAllCaps="false"
+        android:gravity="end"
+        android:id="@+id/fee_val_tv"
+        android:layout_marginStart="40dp"
+        android:textSize="13sp"
+        android:textColor="@color/color_ff1f2021"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <!-- Total -->
+    <TextView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fee_tv"
+        android:text="Total"
+        android:layout_marginTop="15dp"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:id="@+id/total_tv"
+        android:textSize="15sp"
+        android:textColor="@color/color_ff616366"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/total_tv"
+        app:layout_constraintStart_toEndOf="@+id/total_tv"
+        tools:text="0.001124 BTC"
+        android:textAllCaps="false"
+        android:gravity="end"
+        android:id="@+id/total_val_tv"
+        android:layout_marginStart="40dp"
+        android:textSize="13sp"
+        android:textColor="@color/color_ff1f2021"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+
+    <ImageView
+        android:id="@+id/testIcon"
+        android:visibility="gone"
+        android:src="@mipmap/test"
+        android:layout_marginStart="10dp"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/token_type_tv"
+        app:layout_constraintStart_toEndOf="@+id/token_type_tv"
+        app:layout_constraintBottom_toBottomOf="@+id/token_type_tv"
+        android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
